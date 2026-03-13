@@ -1,0 +1,26 @@
+brand,category,avg_price_eur,ir_price,price_diff_pct,position
+Bosch Professional,Compressors,414.89,106.6,289.2,IR CHEAPER
+Bosch Professional,Drills,429.97,313.34,37.2,IR CHEAPER
+Bosch Professional,Grinders,444.39,389.21,14.2,IR CHEAPER
+Bosch Professional,Impact Wrenches,312.02,375.67,-16.9,IR PRICIER
+Bosch Professional,Ratchets,259.64,394.41,-34.2,IR PRICIER
+DeWalt,Compressors,174.32,106.6,63.5,IR CHEAPER
+DeWalt,Drills,320.48,313.34,2.3,IR CHEAPER
+DeWalt,Grinders,438.96,389.21,12.8,IR CHEAPER
+DeWalt,Impact Wrenches,141.18,375.67,-62.4,IR PRICIER
+DeWalt,Ratchets,423.92,394.41,7.5,IR CHEAPER
+Makita,Compressors,407.59,106.6,282.4,IR CHEAPER
+Makita,Drills,118.15,313.34,-62.3,IR PRICIER
+Makita,Grinders,400.88,389.21,3.0,IR CHEAPER
+Makita,Impact Wrenches,359.71,375.67,-4.2,IR PRICIER
+Makita,Ratchets,106.18,394.41,-73.1,IR PRICIER
+Metabo,Compressors,158.88,106.6,49.0,IR CHEAPER
+Metabo,Drills,241.38,313.34,-23.0,IR PRICIER
+Metabo,Grinders,307.13,389.21,-21.1,IR PRICIER
+Metabo,Impact Wrenches,106.47,375.67,-71.7,IR PRICIER
+Metabo,Ratchets,262.27,394.41,-33.5,IR PRICIER
+Milwaukee,Compressors,219.07,106.6,105.5,IR CHEAPER
+Milwaukee,Drills,270.79,313.34,-13.6,IR PRICIER
+Milwaukee,Grinders,356.94,389.21,-8.3,IR PRICIER
+Milwaukee,Impact Wrenches,396.73,375.67,5.6,IR CHEAPER
+Milwaukee,Ratchets,385.25,394.41,-2.3,IR PRICIER

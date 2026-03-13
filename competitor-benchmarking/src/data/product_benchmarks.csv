@@ -1,0 +1,31 @@
+brand,category,avg_price_eur,product_count,avg_rating,review_count,in_stock_pct,discount_pct,seo_visibility_score,paid_search_presence,social_followers_k
+Ingersoll Rand,Impact Wrenches,375.67,28,4.0,1782,94.2,2.9,61.0,True,127.9
+Ingersoll Rand,Drills,313.34,40,3.8,2493,72.8,23.9,41.2,True,433.7
+Ingersoll Rand,Grinders,389.21,19,4.2,1160,74.4,19.5,64.7,True,195.6
+Ingersoll Rand,Compressors,106.6,20,4.6,7582,83.8,17.6,35.0,True,632.9
+Ingersoll Rand,Ratchets,394.41,14,4.4,6977,74.1,19.5,65.0,True,234.8
+Bosch Professional,Impact Wrenches,312.02,43,4.9,3078,97.3,1.4,84.8,False,639.6
+Bosch Professional,Drills,429.97,41,4.1,4891,84.8,18.5,80.0,False,15.8
+Bosch Professional,Grinders,444.39,11,4.3,523,92.1,19.0,58.1,True,837.9
+Bosch Professional,Compressors,414.89,39,3.9,4062,94.2,16.4,39.6,True,19.5
+Bosch Professional,Ratchets,259.64,30,4.8,6350,83.2,0.0,81.6,True,647.7
+Makita,Impact Wrenches,359.71,9,4.6,2165,74.4,23.1,37.4,False,828.4
+Makita,Drills,118.15,16,4.1,1919,92.8,2.1,40.7,True,47.7
+Makita,Grinders,400.88,40,4.6,4923,91.2,15.0,61.8,True,510.5
+Makita,Compressors,407.59,38,4.5,2616,86.6,7.2,86.8,True,505.1
+Makita,Ratchets,106.18,9,4.6,272,74.4,22.0,63.2,True,663.3
+DeWalt,Impact Wrenches,141.18,32,4.1,7386,85.2,17.4,79.9,True,746.3
+DeWalt,Drills,320.48,24,4.1,7567,95.5,21.5,51.0,True,660.6
+DeWalt,Grinders,438.96,38,4.9,6489,93.1,13.1,62.8,False,824.0
+DeWalt,Compressors,174.32,43,4.7,5596,80.3,2.0,73.9,True,121.2
+DeWalt,Ratchets,423.92,11,4.0,6952,87.9,14.0,74.0,True,450.9
+Milwaukee,Impact Wrenches,396.73,45,3.9,5867,94.2,6.8,40.5,True,56.1
+Milwaukee,Drills,270.79,45,4.9,909,95.8,7.5,53.4,True,44.8
+Milwaukee,Grinders,356.94,17,4.3,6657,98.5,21.3,35.0,True,97.6
+Milwaukee,Compressors,219.07,16,3.8,6630,89.2,6.5,68.9,True,540.0
+Milwaukee,Ratchets,385.25,42,4.8,919,73.9,13.8,94.4,False,437.3
+Metabo,Impact Wrenches,106.47,38,4.0,4851,92.8,8.1,60.5,True,415.7
+Metabo,Drills,241.38,44,4.2,5601,95.5,19.6,56.1,True,183.9
+Metabo,Grinders,307.13,27,4.5,2909,81.2,16.1,42.4,True,668.3
+Metabo,Compressors,158.88,30,4.7,7888,76.3,16.8,84.0,False,252.1
+Metabo,Ratchets,262.27,14,4.3,5785,73.8,7.2,92.7,True,497.0

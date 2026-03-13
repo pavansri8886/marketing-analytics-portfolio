@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Competitor Benchmarking Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f0f2f5;color:#222}
+header{background:#1a1a2e;color:white;padding:24px 36px}
+header h1{font-size:22px;font-weight:700}
+header p{font-size:12px;color:#aaa;margin-top:3px}
+.kpi-row{display:flex;gap:16px;padding:24px 36px 0;flex-wrap:wrap}
+.kpi{background:white;border-radius:8px;padding:18px 22px;flex:1;min-width:140px;
+      box-shadow:0 2px 6px rgba(0,0,0,.07);border-top:4px solid #1a1a2e}
+.kpi .val{font-size:26px;font-weight:700;color:#1a1a2e}
+.kpi .lbl{font-size:11px;color:#777;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.section{background:white;border-radius:8px;margin:20px 36px 0;padding:20px 24px;
+          box-shadow:0 2px 6px rgba(0,0,0,.07)}
+.section h2{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:14px;
+             padding-left:8px;border-left:4px solid #e94560}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8f9fc;text-align:left;padding:9px 10px;color:#555;font-weight:600;border-bottom:2px solid #eee}
+td{padding:9px 10px;border-bottom:1px solid #f0f0f0}
+tr:hover td{background:#fafafa}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 36px 0}
+.two-col .section{margin:0}
+.chart-wrap{height:200px;position:relative}
+footer{text-align:center;padding:28px;color:#aaa;font-size:11px}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head><body>
+<header>
+  <h1>Competitor Benchmarking Dashboard — Power Tools Market</h1>
+  <p>Pricing &middot; Share of Voice &middot; Digital Presence &middot; Customer Ratings</p>
+</header>
+<div class="kpi-row">
+  <div class="kpi"><div class="val">6</div><div class="lbl">Brands Analysed</div></div>
+  <div class="kpi"><div class="val">5</div><div class="lbl">Categories</div></div>
+  <div class="kpi"><div class="val">€316</div><div class="lbl">IR Avg Price</div></div>
+  <div class="kpi"><div class="val">4.2</div><div class="lbl">IR Avg Rating</div></div>
+  <div class="kpi"><div class="val">18.29%</div><div class="lbl">IR Share of Voice</div></div>
+  <div class="kpi"><div class="val">DeWalt</div><div class="lbl">Top Competitor SOV</div></div>
+</div>
+<div class="two-col">
+  <div class="section">
+    <h2>Share of Voice by Brand</h2>
+    <div class="chart-wrap"><canvas id="sovChart"></canvas></div>
+  </div>
+  <div class="section">
+    <h2>Average Price by Brand</h2>
+    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+  </div>
+</div>
+<div class="section">
+  <h2>Digital Presence &amp; Share of Voice</h2>
+  <table><thead><tr><th>Brand</th><th>Seo Score</th><th>Avg Organic K</th><th>Avg Paid K</th><th>Avg Sov</th><th>Avg Bounce</th></tr></thead><tbody><tr><td>DeWalt</td><td>68.32</td><td>337.42</td><td>73.58</td><td>19.08</td><td>47.28</td></tr><tr><td>Makita</td><td>57.98</td><td>336.42</td><td>104.73</td><td>19.03</td><td>44.09</td></tr><tr><td>Metabo</td><td>67.14</td><td>288.34</td><td>97.54</td><td>18.31</td><td>43.88</td></tr><tr><td>Ingersoll Rand</td><td>53.38</td><td>300.21</td><td>94.19</td><td>18.29</td><td>45.57</td></tr><tr><td>Milwaukee</td><td>58.44</td><td>231.27</td><td>76.65</td><td>17.68</td><td>46.60</td></tr><tr><td>Bosch Professional</td><td>68.82</td><td>200.92</td><td>113.07</td><td>17.27</td><td>47.75</td></tr></tbody></table>
+</div>
+<div class="two-col">
+  <div class="section">
+    <h2>Customer Rating Comparison</h2>
+    <table><thead><tr><th>Brand</th><th>Avg Rating</th><th>Total Reviews</th></tr></thead><tbody><tr><td>Makita</td><td>4.48</td><td>11895</td></tr><tr><td>Bosch Professional</td><td>4.40</td><td>18904</td></tr><tr><td>DeWalt</td><td>4.36</td><td>33990</td></tr><tr><td>Metabo</td><td>4.34</td><td>27034</td></tr><tr><td>Milwaukee</td><td>4.34</td><td>20982</td></tr><tr><td>Ingersoll Rand</td><td>4.20</td><td>19994</td></tr></tbody></table>
+  </div>
+  <div class="section">
+    <h2>Pricing &amp; Product Position</h2>
+    <table><thead><tr><th>Brand</th><th>Avg Price</th><th>Total Products</th><th>Avg Discount</th><th>Avg Stock</th></tr></thead><tbody><tr><td>Bosch Professional</td><td>372.18</td><td>164</td><td>11.06</td><td>90.32</td></tr><tr><td>Milwaukee</td><td>325.76</td><td>165</td><td>11.18</td><td>90.32</td></tr><tr><td>Ingersoll Rand</td><td>315.85</td><td>121</td><td>16.68</td><td>79.86</td></tr><tr><td>DeWalt</td><td>299.77</td><td>148</td><td>13.60</td><td>88.40</td></tr><tr><td>Makita</td><td>278.50</td><td>112</td><td>13.88</td><td>83.88</td></tr><tr><td>Metabo</td><td>215.23</td><td>153</td><td>13.56</td><td>83.92</td></tr></tbody></table>
+  </div>
+</div>
+<div class="section">
+  <h2>Category Price Comparison vs Ingersoll Rand</h2>
+  <table><thead><tr><th>Brand</th><th>Category</th><th>Avg Price Eur</th><th>Ir Price</th><th>Price Diff Pct</th><th>Position</th></tr></thead><tbody><tr><td>Bosch Professional</td><td>Compressors</td><td>414.89</td><td>106.60</td><td>289.20</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Bosch Professional</td><td>Drills</td><td>429.97</td><td>313.34</td><td>37.20</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Bosch Professional</td><td>Grinders</td><td>444.39</td><td>389.21</td><td>14.20</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Bosch Professional</td><td>Impact Wrenches</td><td>312.02</td><td>375.67</td><td>-16.90</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Bosch Professional</td><td>Ratchets</td><td>259.64</td><td>394.41</td><td>-34.20</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>DeWalt</td><td>Compressors</td><td>174.32</td><td>106.60</td><td>63.50</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>DeWalt</td><td>Drills</td><td>320.48</td><td>313.34</td><td>2.30</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>DeWalt</td><td>Grinders</td><td>438.96</td><td>389.21</td><td>12.80</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>DeWalt</td><td>Impact Wrenches</td><td>141.18</td><td>375.67</td><td>-62.40</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>DeWalt</td><td>Ratchets</td><td>423.92</td><td>394.41</td><td>7.50</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Makita</td><td>Compressors</td><td>407.59</td><td>106.60</td><td>282.40</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Makita</td><td>Drills</td><td>118.15</td><td>313.34</td><td>-62.30</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Makita</td><td>Grinders</td><td>400.88</td><td>389.21</td><td>3.00</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Makita</td><td>Impact Wrenches</td><td>359.71</td><td>375.67</td><td>-4.20</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Makita</td><td>Ratchets</td><td>106.18</td><td>394.41</td><td>-73.10</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Metabo</td><td>Compressors</td><td>158.88</td><td>106.60</td><td>49.00</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Metabo</td><td>Drills</td><td>241.38</td><td>313.34</td><td>-23.00</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Metabo</td><td>Grinders</td><td>307.13</td><td>389.21</td><td>-21.10</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Metabo</td><td>Impact Wrenches</td><td>106.47</td><td>375.67</td><td>-71.70</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Metabo</td><td>Ratchets</td><td>262.27</td><td>394.41</td><td>-33.50</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Milwaukee</td><td>Compressors</td><td>219.07</td><td>106.60</td><td>105.50</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Milwaukee</td><td>Drills</td><td>270.79</td><td>313.34</td><td>-13.60</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Milwaukee</td><td>Grinders</td><td>356.94</td><td>389.21</td><td>-8.30</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr><tr><td>Milwaukee</td><td>Impact Wrenches</td><td>396.73</td><td>375.67</td><td>5.60</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR CHEAPER</span></td></tr><tr><td>Milwaukee</td><td>Ratchets</td><td>385.25</td><td>394.41</td><td>-2.30</td><td><span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">IR PRICIER</span></td></tr></tbody></table>
+</div>
+<footer>Competitor Benchmarking Dashboard &middot; Python &middot; pandas &middot; Chart.js &middot; Ingersoll Rand Power Tools</footer>
+<script>
+new Chart(document.getElementById('sovChart'),{
+  type:'bar',
+  data:{
+    labels:['DeWalt', 'Makita', 'Metabo', 'Ingersoll Rand', 'Milwaukee', 'Bosch Professional'],
+    datasets:[{label:'Share of Voice %',data:[19.08, 19.03, 18.31, 18.29, 17.68, 17.27],
+      backgroundColor:['rgba(233,69,96,0.85)','rgba(26,26,46,0.75)','rgba(26,26,46,0.6)','rgba(26,26,46,0.5)','rgba(26,26,46,0.4)','rgba(26,26,46,0.3)'],
+      borderRadius:4}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+new Chart(document.getElementById('priceChart'),{
+  type:'bar',
+  data:{
+    labels:['Bosch Professional', 'Milwaukee', 'Ingersoll Rand', 'DeWalt', 'Makita', 'Metabo'],
+    datasets:[{label:'Avg Price (€)',data:[372.18, 325.76, 315.85, 299.77, 278.5, 215.23],
+      backgroundColor:['rgba(233,69,96,0.85)','rgba(26,26,46,0.75)','rgba(26,26,46,0.6)','rgba(26,26,46,0.5)','rgba(26,26,46,0.4)','rgba(26,26,46,0.3)'],
+      borderRadius:4}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+</script>
+</body></html>

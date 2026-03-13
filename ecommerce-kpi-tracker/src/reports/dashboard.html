@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>E-Commerce KPI Tracker</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f0f2f5;color:#222}
+header{background:#0F4C75;color:white;padding:24px 36px}
+header h1{font-size:22px;font-weight:700}
+header p{font-size:12px;color:#aaa;margin-top:3px}
+.kpi-row{display:flex;gap:16px;padding:24px 36px 0;flex-wrap:wrap}
+.kpi{background:white;border-radius:8px;padding:18px 22px;flex:1;min-width:130px;
+      box-shadow:0 2px 6px rgba(0,0,0,.07);border-top:4px solid #0F4C75}
+.kpi .val{font-size:26px;font-weight:700;color:#0F4C75}
+.kpi .lbl{font-size:11px;color:#777;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.section{background:white;border-radius:8px;margin:20px 36px 0;padding:20px 24px;
+          box-shadow:0 2px 6px rgba(0,0,0,.07)}
+.section h2{font-size:14px;font-weight:700;color:#0F4C75;margin-bottom:14px;
+             padding-left:8px;border-left:4px solid #1B98E0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8f9fc;text-align:left;padding:9px 10px;color:#555;font-weight:600;border-bottom:2px solid #eee}
+td{padding:9px 10px;border-bottom:1px solid #f0f0f0}
+tr:hover td{background:#f7faff}
+.chart-wrap{height:210px;position:relative}
+footer{text-align:center;padding:28px;color:#aaa;font-size:11px}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head><body>
+<header>
+  <h1>E-Commerce KPI Tracker</h1>
+  <p>Conversion Funnel &middot; Channel Performance &middot; Revenue Analytics  |  FY 2024</p>
+</header>
+<div class="kpi-row">
+  <div class="kpi"><div class="val">€93,863,172</div><div class="lbl">Total Revenue</div></div>
+  <div class="kpi"><div class="val">427,783</div><div class="lbl">Total Orders</div></div>
+  <div class="kpi"><div class="val">5.8%</div><div class="lbl">Avg Conv Rate</div></div>
+  <div class="kpi"><div class="val">47.6%</div><div class="lbl">Avg Bounce Rate</div></div>
+  <div class="kpi"><div class="val">€216.5</div><div class="lbl">Avg Order Value</div></div>
+  <div class="kpi"><div class="val">60.6%</div><div class="lbl">Cart Abandonment</div></div>
+</div>
+<div class="section">
+  <h2>Monthly Revenue &amp; Conversion Rate Trend</h2>
+  <div class="chart-wrap"><canvas id="monthlyChart"></canvas></div>
+</div>
+<div class="section">
+  <h2>Channel Performance Scorecard</h2>
+  <table><thead><tr><th>Channel</th><th>Total Sessions</th><th>Total Revenue</th><th>Avg Conv Rate</th><th>Avg Bounce</th><th>Avg Cart Abandon</th><th>Status</th></tr></thead><tbody><tr><td>Social Media</td><td>1516275</td><td>19,279,388.56</td><td>5.72</td><td>46.67</td><td>61.03</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">HIGH PERFORMER</span></td></tr><tr><td>Direct</td><td>1514461</td><td>19,134,462.01</td><td>5.75</td><td>47.49</td><td>61.13</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">HIGH PERFORMER</span></td></tr><tr><td>Email</td><td>1463655</td><td>18,836,569.90</td><td>5.77</td><td>47.85</td><td>60.35</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">HIGH PERFORMER</span></td></tr><tr><td>Organic Search</td><td>1491337</td><td>18,726,792.02</td><td>5.91</td><td>48.25</td><td>59.89</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">HIGH PERFORMER</span></td></tr><tr><td>Paid Search</td><td>1412582</td><td>17,885,959.26</td><td>5.88</td><td>47.88</td><td>60.55</td><td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold">HIGH PERFORMER</span></td></tr></tbody></table>
+</div>
+<footer>E-Commerce KPI Tracker &middot; Python &middot; pandas &middot; Chart.js</footer>
+<script>
+new Chart(document.getElementById('monthlyChart'),{
+  type:'bar',
+  data:{
+    labels:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    datasets:[
+      {label:'Revenue (€)',data:[8031840.0, 6752494.0, 8512601.0, 7710972.0, 7720507.0, 7610234.0, 7988302.0, 8089064.0, 7806707.0, 7238610.0, 8292941.0, 8108901.0],backgroundColor:'rgba(15,76,117,0.75)',borderRadius:4,yAxisID:'y'},
+      {label:'Conv Rate %',data:[5.97, 5.38, 5.95, 5.64, 5.63, 5.94, 5.52, 6.11, 5.91, 5.67, 5.99, 5.94],type:'line',borderColor:'#1B98E0',tension:0.4,fill:false,yAxisID:'y1'}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{y:{beginAtZero:true},y1:{position:'right',min:0,grid:{drawOnChartArea:false}}}
+  }
+});
+</script>
+</body></html>
